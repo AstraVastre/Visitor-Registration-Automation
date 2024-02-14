@@ -163,6 +163,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\result1.png" />
+    <None Include="Resources\344242896_2173140952889334_3144547788274786345_n-removebg-preview.png" />
     <None Include="Resources\result.png" />
   </ItemGroup>
   <ItemGroup>

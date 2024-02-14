@@ -63,9 +63,29 @@ namespace SiberKayit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _344242896_2173140952889334_3144547788274786345_n_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("344242896_2173140952889334_3144547788274786345_n-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap result {
             get {
                 object obj = ResourceManager.GetObject("result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap result1 {
+            get {
+                object obj = ResourceManager.GetObject("result1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

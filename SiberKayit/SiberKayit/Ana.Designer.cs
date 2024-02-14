@@ -48,6 +48,7 @@ namespace SiberKayit
             this.lbl_saat = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@ namespace SiberKayit
             this.lbl_tc.AutoSize = true;
             this.lbl_tc.Location = new System.Drawing.Point(53, 226);
             this.lbl_tc.Name = "lbl_tc";
-            this.lbl_tc.Size = new System.Drawing.Size(50, 17);
+            this.lbl_tc.Size = new System.Drawing.Size(47, 16);
             this.lbl_tc.TabIndex = 2;
             this.lbl_tc.Text = "Tc No:";
             // 
@@ -98,7 +99,7 @@ namespace SiberKayit
             this.lbl_adi.AutoSize = true;
             this.lbl_adi.Location = new System.Drawing.Point(53, 284);
             this.lbl_adi.Name = "lbl_adi";
-            this.lbl_adi.Size = new System.Drawing.Size(25, 17);
+            this.lbl_adi.Size = new System.Drawing.Size(24, 16);
             this.lbl_adi.TabIndex = 7;
             this.lbl_adi.Text = "Ad";
             // 
@@ -107,7 +108,7 @@ namespace SiberKayit
             this.lbl_soyadi.AutoSize = true;
             this.lbl_soyadi.Location = new System.Drawing.Point(53, 328);
             this.lbl_soyadi.Name = "lbl_soyadi";
-            this.lbl_soyadi.Size = new System.Drawing.Size(52, 17);
+            this.lbl_soyadi.Size = new System.Drawing.Size(50, 16);
             this.lbl_soyadi.TabIndex = 8;
             this.lbl_soyadi.Text = "Soyad:";
             // 
@@ -154,7 +155,7 @@ namespace SiberKayit
             this.lbl_kayitara.AutoSize = true;
             this.lbl_kayitara.Location = new System.Drawing.Point(710, 124);
             this.lbl_kayitara.Name = "lbl_kayitara";
-            this.lbl_kayitara.Size = new System.Drawing.Size(69, 17);
+            this.lbl_kayitara.Size = new System.Drawing.Size(63, 16);
             this.lbl_kayitara.TabIndex = 13;
             this.lbl_kayitara.Text = "Kayıt Ara:";
             // 
@@ -224,12 +225,23 @@ namespace SiberKayit
             this.label1.TabIndex = 20;
             this.label1.Text = "Isparta Gençlik Merkezi";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(916, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 25);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "cdskpdkcvmsldvmsm";
+            // 
             // Ana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1429, 838);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_saat);
             this.Controls.Add(this.btn_hepsinisil);
@@ -280,6 +292,7 @@ namespace SiberKayit
         private System.Windows.Forms.Label lbl_saat;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

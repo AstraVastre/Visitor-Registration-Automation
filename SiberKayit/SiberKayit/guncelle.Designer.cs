@@ -64,7 +64,7 @@ namespace SiberKayit
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(231, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "TcNo:";
             // 
@@ -73,7 +73,7 @@ namespace SiberKayit
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(245, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 17);
+            this.label2.Size = new System.Drawing.Size(30, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Adı:";
             // 
@@ -82,7 +82,7 @@ namespace SiberKayit
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(234, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Soyadı:";
             // 
@@ -100,7 +100,7 @@ namespace SiberKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(654, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

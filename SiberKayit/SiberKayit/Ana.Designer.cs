@@ -29,6 +29,7 @@ namespace SiberKayit
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ana));
             this.txt_tc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_ekle = new System.Windows.Forms.Button();
@@ -171,6 +172,7 @@ namespace SiberKayit
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = global::SiberKayit.Properties.Resources.result;
             this.ClientSize = new System.Drawing.Size(1429, 838);
             this.Controls.Add(this.btn_guncelle);
             this.Controls.Add(this.tarihsaat);
@@ -186,6 +188,7 @@ namespace SiberKayit
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_tc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ana";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

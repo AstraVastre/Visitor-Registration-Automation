@@ -44,6 +44,7 @@ namespace SiberKayit
             this.tarihsaat = new System.Windows.Forms.Label();
             this.btn_guncelle = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,6 +183,18 @@ namespace SiberKayit
             this.label6.TabIndex = 18;
             this.label6.Text = "Siber Isparta Gençlik Merkezi Ziyaretçi Kayıt Otomasyonu";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.SlateBlue;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(28, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(194, 32);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Personel Giriş";
+            // 
             // Ana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,6 +203,7 @@ namespace SiberKayit
             this.BackgroundImage = global::SiberKayit.Properties.Resources.result1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1429, 838);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_guncelle);
             this.Controls.Add(this.tarihsaat);
@@ -233,6 +247,7 @@ namespace SiberKayit
         private System.Windows.Forms.Label tarihsaat;
         private System.Windows.Forms.Button btn_guncelle;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
 

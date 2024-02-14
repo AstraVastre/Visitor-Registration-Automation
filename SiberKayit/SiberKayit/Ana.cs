@@ -18,11 +18,9 @@ namespace SiberKayit
         public Ana()
         {
             InitializeComponent();
-
-
         }
 
-
+     
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,12 +47,7 @@ namespace SiberKayit
                     temizle();
                     listele();
                 }
-
-
-
-
-
-
+                    
             }
 
             catch (Exception ex)
@@ -70,7 +63,7 @@ namespace SiberKayit
         {
             txt_adi.Text = string.Empty;
             txt_soyadi.Text = string.Empty;
-            txt_tc.Text = string.Empty;
+            txt_tc.Text = string.Empty; 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -78,8 +71,11 @@ namespace SiberKayit
 
             listele();
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+            lbl_saat.Text = DateTime.Now.ToShortTimeString();
+            timer1.Start();
+            lbl_tarih.Text = DateTime.Now.ToLongDateString();
+            KeyPreview = true;
 
-            tarihsaat.Text = DateTime.Now.ToLongDateString();
 
         }
         public void listele()
@@ -114,6 +110,8 @@ namespace SiberKayit
                 e.Handled = true;
             }
         }
+
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -240,6 +238,77 @@ namespace SiberKayit
             }
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+
+                int id = (int)row.Cells["id"].Value;
+                string adi = row.Cells["adi"].Value.ToString();
+                string soyadi = row.Cells["soyadi"].Value.ToString();
+                string tc = row.Cells["tcNo"].Value.ToString();
+                DateTime girisTarihi = DateTime.Now;
+
+                islemler tekrarKaydet = new islemler();
+                tekrarKaydet.kayit(adi, soyadi, tc, girisTarihi);
+                }
+
+            listele();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            DialogResult sonuc = MessageBox.Show("Seçilen Kayıtları Silmek İstediğinizden Emin Misiniz?", "Kayıtları Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                   
+                        int id = (int)row.Cells["id"].Value;
+
+
+                        islemler sil = new islemler();
+                        sil.sil(id);
+                    
+
+                }
+
+                listele();
+            }
+           
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbl_saat.Text = DateTime.Now.ToShortTimeString();
+
+        }
+
+        private void Ana_KeyDown(object sender, KeyEventArgs e)
+        {
+
+           
+
+
+        }
+        
+
+        private void Ana_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+
+
+
+
+        }
     }
     
  }

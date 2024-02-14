@@ -29,22 +29,24 @@ namespace SiberKayit
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ana));
+            this.components = new System.ComponentModel.Container();
             this.txt_tc = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_tc = new System.Windows.Forms.Label();
             this.btn_ekle = new System.Windows.Forms.Button();
             this.txt_soyadi = new System.Windows.Forms.TextBox();
             this.txt_adi = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_adi = new System.Windows.Forms.Label();
+            this.lbl_soyadi = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_arama = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tarihsaat = new System.Windows.Forms.Label();
+            this.lbl_kayitara = new System.Windows.Forms.Label();
+            this.lbl_tarih = new System.Windows.Forms.Label();
             this.btn_guncelle = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btn_hepsinikaydet = new System.Windows.Forms.Button();
+            this.btn_hepsinisil = new System.Windows.Forms.Button();
+            this.lbl_saat = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,14 +59,14 @@ namespace SiberKayit
             this.txt_tc.TabIndex = 0;
             this.txt_tc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tc_KeyPress);
             // 
-            // label1
+            // lbl_tc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 226);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tc No:";
+            this.lbl_tc.AutoSize = true;
+            this.lbl_tc.Location = new System.Drawing.Point(53, 226);
+            this.lbl_tc.Name = "lbl_tc";
+            this.lbl_tc.Size = new System.Drawing.Size(50, 17);
+            this.lbl_tc.TabIndex = 2;
+            this.lbl_tc.Text = "Tc No:";
             // 
             // btn_ekle
             // 
@@ -90,23 +92,23 @@ namespace SiberKayit
             this.txt_adi.Size = new System.Drawing.Size(164, 22);
             this.txt_adi.TabIndex = 6;
             // 
-            // label2
+            // lbl_adi
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 284);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Ad";
+            this.lbl_adi.AutoSize = true;
+            this.lbl_adi.Location = new System.Drawing.Point(53, 284);
+            this.lbl_adi.Name = "lbl_adi";
+            this.lbl_adi.Size = new System.Drawing.Size(25, 17);
+            this.lbl_adi.TabIndex = 7;
+            this.lbl_adi.Text = "Ad";
             // 
-            // label3
+            // lbl_soyadi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 328);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Soyad:";
+            this.lbl_soyadi.AutoSize = true;
+            this.lbl_soyadi.Location = new System.Drawing.Point(53, 328);
+            this.lbl_soyadi.Name = "lbl_soyadi";
+            this.lbl_soyadi.Size = new System.Drawing.Size(52, 17);
+            this.lbl_soyadi.TabIndex = 8;
+            this.lbl_soyadi.Text = "Soyad:";
             // 
             // button2
             // 
@@ -120,14 +122,20 @@ namespace SiberKayit
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(380, 179);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1103, 695);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick_1);
             // 
@@ -140,26 +148,24 @@ namespace SiberKayit
             this.txt_arama.TabIndex = 12;
             this.txt_arama.TextChanged += new System.EventHandler(this.txt_arama_TextChanged);
             // 
-            // label4
+            // lbl_kayitara
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(710, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Kayıt Ara:";
+            this.lbl_kayitara.AutoSize = true;
+            this.lbl_kayitara.Location = new System.Drawing.Point(710, 124);
+            this.lbl_kayitara.Name = "lbl_kayitara";
+            this.lbl_kayitara.Size = new System.Drawing.Size(69, 17);
+            this.lbl_kayitara.TabIndex = 13;
+            this.lbl_kayitara.Text = "Kayıt Ara:";
             // 
-            // tarihsaat
+            // lbl_tarih
             // 
-            this.tarihsaat.AutoSize = true;
-            this.tarihsaat.BackColor = System.Drawing.Color.SlateBlue;
-            this.tarihsaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tarihsaat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tarihsaat.Location = new System.Drawing.Point(28, 25);
-            this.tarihsaat.Name = "tarihsaat";
-            this.tarihsaat.Size = new System.Drawing.Size(93, 32);
-            this.tarihsaat.TabIndex = 15;
-            this.tarihsaat.Text = "label6";
+            this.lbl_tarih.AutoSize = true;
+            this.lbl_tarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_tarih.Location = new System.Drawing.Point(29, 41);
+            this.lbl_tarih.Name = "lbl_tarih";
+            this.lbl_tarih.Size = new System.Drawing.Size(64, 25);
+            this.lbl_tarih.TabIndex = 15;
+            this.lbl_tarih.Text = "label6";
             // 
             // btn_guncelle
             // 
@@ -171,60 +177,71 @@ namespace SiberKayit
             this.btn_guncelle.UseVisualStyleBackColor = true;
             this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
             // 
-            // label6
+            // btn_hepsinikaydet
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.SlateBlue;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(518, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(854, 38);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Siber Isparta Gençlik Merkezi Ziyaretçi Kayıt Otomasyonu";
+            this.btn_hepsinikaydet.Location = new System.Drawing.Point(34, 516);
+            this.btn_hepsinikaydet.Name = "btn_hepsinikaydet";
+            this.btn_hepsinikaydet.Size = new System.Drawing.Size(155, 23);
+            this.btn_hepsinikaydet.TabIndex = 17;
+            this.btn_hepsinikaydet.Text = "Seçilenleri Kaydet";
+            this.btn_hepsinikaydet.UseVisualStyleBackColor = true;
+            this.btn_hepsinikaydet.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label5
+            // btn_hepsinisil
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.SlateBlue;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(28, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 32);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Personel Giriş";
+            this.btn_hepsinisil.Location = new System.Drawing.Point(205, 516);
+            this.btn_hepsinisil.Name = "btn_hepsinisil";
+            this.btn_hepsinisil.Size = new System.Drawing.Size(155, 23);
+            this.btn_hepsinisil.TabIndex = 18;
+            this.btn_hepsinisil.Text = "Seçilenleri Sil";
+            this.btn_hepsinisil.UseVisualStyleBackColor = true;
+            this.btn_hepsinisil.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lbl_saat
+            // 
+            this.lbl_saat.AutoSize = true;
+            this.lbl_saat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_saat.Location = new System.Drawing.Point(29, 9);
+            this.lbl_saat.Name = "lbl_saat";
+            this.lbl_saat.Size = new System.Drawing.Size(64, 25);
+            this.lbl_saat.TabIndex = 19;
+            this.lbl_saat.Text = "label6";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Ana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::SiberKayit.Properties.Resources.result1;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1429, 838);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_saat);
+            this.Controls.Add(this.btn_hepsinisil);
+            this.Controls.Add(this.btn_hepsinikaydet);
             this.Controls.Add(this.btn_guncelle);
-            this.Controls.Add(this.tarihsaat);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_tarih);
+            this.Controls.Add(this.lbl_kayitara);
             this.Controls.Add(this.txt_arama);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_soyadi);
+            this.Controls.Add(this.lbl_adi);
             this.Controls.Add(this.txt_adi);
             this.Controls.Add(this.txt_soyadi);
             this.Controls.Add(this.btn_ekle);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_tc);
             this.Controls.Add(this.txt_tc);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ana";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ana_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ana_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,20 +251,22 @@ namespace SiberKayit
         #endregion
 
         private System.Windows.Forms.TextBox txt_tc;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_tc;
         private System.Windows.Forms.Button btn_ekle;
         private System.Windows.Forms.TextBox txt_soyadi;
         private System.Windows.Forms.TextBox txt_adi;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_adi;
+        private System.Windows.Forms.Label lbl_soyadi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txt_arama;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label tarihsaat;
+        private System.Windows.Forms.Label lbl_kayitara;
+        private System.Windows.Forms.Label lbl_tarih;
         private System.Windows.Forms.Button btn_guncelle;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_hepsinikaydet;
+        private System.Windows.Forms.Button btn_hepsinisil;
+        private System.Windows.Forms.Label lbl_saat;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
